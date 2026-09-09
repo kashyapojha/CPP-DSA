@@ -1,0 +1,47 @@
+#include<iostream>    // time complexity = n^2
+using namespace std; 
+int main (){ 
+    int arr[1000];
+    int n;
+    cout << "Enter the size of array:-";
+    cin >> n;  // size of array
+    cout <<"Enter the element in array:-";
+    for(int i=0; i<n; i++)
+    cin>>arr[i];
+
+    for (int i=0; i<n-1; i++){
+        int index = i;
+        for (int j = i+1; j<n ;j++)
+        {
+            if(arr[j]<arr[index])
+            index=j;
+        }
+        swap(arr[i],arr[index]);
+    }
+
+for (int i=0;i<n;i++){
+    cout << arr[i]<<" ";
+}
+}
+
+
+/*
+class Solution {
+public:
+    vector<int> sortArray(vector<int>& nums) {
+
+        int n = nums.size();
+        for (int i=0; i<n-1;i++){
+            int index=i;
+            for (int j=i+1; j<n; j++){
+                if (nums[j]<nums[index])
+                index = j;
+            }
+            swap(nums[i],nums[index]);
+
+        }
+        return nums;
+        
+    }
+};
+*/
